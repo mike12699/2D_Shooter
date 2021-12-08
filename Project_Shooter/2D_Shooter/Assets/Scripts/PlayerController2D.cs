@@ -15,6 +15,7 @@ public class PlayerController2D : MonoBehaviour
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask groundLayer;
+    public Animator plyaerAnimation;
 
     private Rigidbody2D rb;
 

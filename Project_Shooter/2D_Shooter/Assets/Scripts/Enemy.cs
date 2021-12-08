@@ -8,6 +8,8 @@ public class Enemy : MonoBehaviour
 
     public GameObject deadEnemy;
 
+    public Animator enemyAnimation;
+
     public void TakeDamage (int damage)
     {
         Health -= damage;
@@ -20,6 +22,8 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        //enemyAnimation.GetFloat("Death");
+        enemyAnimation.SetBool("Death", true);
         Instantiate(deadEnemy, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
