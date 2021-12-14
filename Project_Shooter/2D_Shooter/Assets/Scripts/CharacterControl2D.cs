@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharacterControl2D : MonoBehaviour
 {
@@ -12,6 +14,8 @@ public class CharacterControl2D : MonoBehaviour
 	[SerializeField] private Transform m_GroundCheck;
 	[SerializeField] private Transform m_CeilingCheck;
 
+	public Text healthDisplay;
+	public int health = 3;
 	const float k_GroundedRadius = .2f;
 	private bool m_Grounded;
 	const float k_CeilingRadius = .2f;
@@ -36,7 +40,16 @@ public class CharacterControl2D : MonoBehaviour
 			OnLandEvent = new UnityEvent();
 	}
 
-	private void FixedUpdate()
+    private void Update()
+    {
+		healthDisplay.text = health.ToString();
+		if (health <= 0)
+        {
+			SceneManager.LoadScene("GameOver");
+        }
+    }
+
+    private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
