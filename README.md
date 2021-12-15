@@ -1,4 +1,4 @@
-# 2D_Shooter (Updated 12/08/2021)
+# 2D_Shooter
 A simple 2D platformer shooter with inspirations from the Metroid games
 
 *Update 12/08/2021*:
