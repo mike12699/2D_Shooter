@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
+    public GameObject helpPanel;
     public void LoadGame()
     {
         SceneManager.LoadScene("Shooter");
@@ -13,5 +14,15 @@ public class GameController : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void OpenPanel()
+    {
+        helpPanel.transform.gameObject.SetActive(true);
+    }
+
+    public void ClosePanel()
+    {
+        helpPanel.transform.gameObject.SetActive(false);
     }
 }
