@@ -9,6 +9,9 @@ public class ScoreManager : MonoBehaviour
     public static int score;
     public Text scoreDisplay;
 
+    /// <summary>
+    /// When score reaches 10 (enemies are all dead) triggers win state
+    /// </summary>
     private void Update()
     {
         scoreDisplay.text = score.ToString();

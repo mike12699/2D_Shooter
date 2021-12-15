@@ -28,16 +28,20 @@ public class PlayerController2D : MonoBehaviour
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, groundLayer);
 
+        //This handles flipping the sprite 180 degrees on the Y axis
         if (moveInput > 0)
         {
+            //Facing right
             transform.eulerAngles = new Vector3(0, 0, 0);
         }
 
         else if (moveInput < 0)
         {
+            //Facing left
             transform.eulerAngles = new Vector3(0, 180, 0);
         }
 
+        //Pressing the W key will make the player jump
         if (grounded == true && Input.GetKeyDown(KeyCode.W))
         {
             isJumping = true;
@@ -67,6 +71,7 @@ public class PlayerController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //Move left and right
         moveInput = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(moveInput * movementSpeed, rb.velocity.y);
     }

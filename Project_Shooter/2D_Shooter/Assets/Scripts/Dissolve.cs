@@ -15,6 +15,9 @@ public class Dissolve : MonoBehaviour
 		material = GetComponent<SpriteRenderer>().material;
 	}
 
+	/// <summary>
+	/// Clicking the left mouse button will make the player turn invisible
+	/// </summary>
 	void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Mouse0))
@@ -24,6 +27,8 @@ public class Dissolve : MonoBehaviour
 
 		if (isDissolving)
 		{
+			//The dissolve will take time to be in effect
+			//Does an animation triggering it
 			fade -= Time.deltaTime;
 
 			if (fade <= 0f)

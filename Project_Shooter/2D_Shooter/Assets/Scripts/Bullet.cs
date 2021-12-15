@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class handles the bullet prefab
+/// When fired it will have a speed of 20 and deal 20 damage to the enemies
+/// </summary>
 public class Bullet : MonoBehaviour
 {
     public float Speed = 20f;

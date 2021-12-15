@@ -22,6 +22,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// This was supposed to trigger a death animation
+    /// Only destroys the game object when health is at 0
+    /// </summary>
     void Die()
     {
         enemyAnimation.GetFloat("Death");
@@ -31,6 +35,10 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    /// <summary>
+    /// When enemy dies add one to the score board
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("ThePlayer"))
