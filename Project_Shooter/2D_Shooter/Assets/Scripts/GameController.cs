@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 
     public void QuitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("TitleScreen");
     }
 
     public void OpenPanel()
